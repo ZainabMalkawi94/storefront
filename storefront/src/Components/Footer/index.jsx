@@ -9,13 +9,13 @@ function Footer() {
       sx={{
         top: 'auto',
         bottom: 0,
-        backgroundColor: '#333',
-        color: '#fff',
+        backgroundColor: '#F5F5F5',
+        color: '#000000',
       }}
     >
       <Toolbar>
         <Typography variant="body1" align="center" sx={{ flexGrow: 1 }}>
-          &copy; 2023 Javascript 401 React + Redux + Material UI
+          &copy; 2023 
         </Typography>
       </Toolbar>
     </AppBar>

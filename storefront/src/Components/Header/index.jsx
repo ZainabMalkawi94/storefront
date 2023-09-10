@@ -21,14 +21,13 @@ const navItems = [{ text: 'CART', count: 0 }];
 function Header(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [cartCount, setCartCount] = React.useState(0); // Initialize cart count to 0
+  const [cartCount, setCartCount] = React.useState(0);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
   const handleAddToCart = () => {
-    // Simulate adding an item to the cart
     setCartCount(cartCount + 1);
   };
 
@@ -37,13 +36,14 @@ function Header(props) {
       onClick={handleDrawerToggle}
       sx={{
         textAlign: 'center',
-        backgroundColor: '#333', // Change background color to #333
-        color: '#fff', // Change text color to white
+        backgroundColor: '#333',
+        color: '#000000', // Change text color to black
       }}
     >
-      <Typography variant="h6" sx={{ my: 2 }}>
-        OUR STORE
-      </Typography>
+   <Typography variant="h6" sx={{ my: 2, color: "#000000" }}>
+STORE FRONT 
+</Typography>
+
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -63,7 +63,7 @@ function Header(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{ backgroundColor: '#333' }}>
+      <AppBar component="nav" sx={{ backgroundColor: '#F5F5F5' }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -77,13 +77,13 @@ function Header(props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' , color: "#000000", fontSize: '35px'} }}
           >
             OUR STORE
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item.text} sx={{ color: '#fff' }} onClick={handleAddToCart}>
+              <Button key={item.text} sx={{ color: '#000000' }} onClick={handleAddToCart}>
                 {`${item.text} (${cartCount})`}
               </Button>
             ))}
@@ -97,37 +97,32 @@ function Header(props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
-              backgroundColor: '#333', // Change background color to #333
-              color: '#fff', // Change text color to white
+              backgroundColor: '#333',
+              color: '#000000', // Change text color to black
             },
           }}
         >
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 4 }}>
+      <Box component="main" sx={{ p: 2 }}>
         <Toolbar />
-        <Typography fontWeight="bold">
+        <Typography fontWeight="light" component="h6" sx={{  fontSize: '30px',margin: '10px', padding: '5px' }}>
           Browse our Categories
         </Typography>
       </Box>
-
     </Box>
   );
 }
 
 Header.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func,
 };
 
