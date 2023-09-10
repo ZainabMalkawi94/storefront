@@ -1,8 +1,11 @@
 import { useSelector } from 'react-redux';
 import './products.scss'; 
+import Typography from '@mui/material/Typography';
+
 
 const Products = () => {
   const activeCategory = useSelector((state) => state.categories.activeCategory); 
+  const dummyText = useSelector((state) => state.categories.dummyText); 
 
   const products = useSelector((state) =>
     state.products.filter((product) => product.category === activeCategory)
@@ -10,8 +13,11 @@ const Products = () => {
 
   return (
     <div className="products-container">
-      <h2>Products</h2>
-      <div className="products">
+
+      <h1 >{activeCategory}</h1>
+           <h3> {dummyText}</h3>
+        <div className="products">
+    
         {products.map((product) => (
           <div className="product-card" key={product.id}>
             <img src={product.imgPath} alt={product.name} />

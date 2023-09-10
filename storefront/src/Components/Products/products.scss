@@ -4,7 +4,12 @@
     text-align: center;
     margin: 20px;
   }
-  
+  .products-container h1{
+    color: black;
+    font-size: 50px;
+        font-weight: lighter;
+        margin-bottom: 0;
+  }
   .products {
     display: flex;
     flex-wrap: wrap;
@@ -37,7 +42,7 @@
   
   .add-to-cart,
   .view-details {
-    background-color: #007bff;
+    background-color: gray;
     color: #fff;
     border: none;
     padding: 5px 10px;
